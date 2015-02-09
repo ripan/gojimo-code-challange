@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html ng-app="gojimoApp">
+	<head>
+		<title>GojimoChallange</title>
+		<%= stylesheet_link_tag    'application', media: 'all' %>
+		<%= javascript_include_tag 'application' %>
+		<%= csrf_meta_tags %>
+	</head>
+	<body>
+		<%= render :partial => 'shared/header'%>
+		<div class="container">
+			<div class="app-view angular-view">
+				<div ng-view class="view-frame"></div>
+			</div>
+			<div class="app-view rails-view">
+				<%= yield %>
+			</div>
+		</div>
+		<%= render :partial => 'shared/footer'%>
+	</body>
+</html>
